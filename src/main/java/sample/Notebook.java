@@ -67,19 +67,27 @@ public class Notebook {
 
     // Кнопка назад для просмотра найденных заметок
     public void backSearch(ActionEvent actionEvent) {
-        if (numberNote != 0)
-        {
-            numberNote --;
-            notesArea.setText(foundNotes.get(numberNote).getNoteText());
+        try {
+            if (numberNote != 0)
+            {
+                numberNote --;
+                notesArea.setText(foundNotes.get(numberNote).getNoteText());
+            }
+        } catch (Exception e) {
+            notesArea.setText("");
         }
     }
 
     // Кнопка вперед для просмотра найднных заметок
     public void forwardSearch(ActionEvent actionEvent) {
-        if (numberNote != foundNotes.size() - 1)
-        {
-            numberNote ++;
-            notesArea.setText(foundNotes.get(numberNote).getNoteText());
+        try {
+            if (numberNote != foundNotes.size() - 1)
+            {
+                numberNote ++;
+                notesArea.setText(foundNotes.get(numberNote).getNoteText());
+            }
+        } catch (Exception e) {
+            notesArea.setText("");
         }
     }
 
